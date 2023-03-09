@@ -9,7 +9,7 @@ public class wizardManager : MonoBehaviour
     public GameObject wizard1;
     public GameObject wizard2;
     private GameObject wizardToBuild;
-    public GameObject GetTurrentToBuild(int wizardNum)
+    public GameObject GetTurrentToBuild()
     {
         // for right now just return 1;
 
@@ -19,10 +19,8 @@ public class wizardManager : MonoBehaviour
     {
         instance = this;
     }
-
-    private void Start()
+    public void SetWizardToSpawn(GameObject wizard)
     {
-        Debug.Log(wizard1);
-        wizardToBuild = wizard1;
+        wizardToBuild = wizard;
     }
 }
