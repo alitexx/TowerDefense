@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class tiles : MonoBehaviour
 {
-    private GameObject wizard;
+    public GameObject wizard;
     public Vector3 positionOffset;
 
     public Color hoverColor;
@@ -27,7 +27,7 @@ public class tiles : MonoBehaviour
         {
             return;
         }
-        if (wizardMngr.GetTurrentToBuild() == null)
+        if (!wizardMngr.CanBuild)
         {
             return;
         }
@@ -36,7 +36,7 @@ public class tiles : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (wizardMngr.GetTurrentToBuild() == null)
+        if (!wizardMngr.CanBuild)
         {
             return;
         }
@@ -51,8 +51,7 @@ public class tiles : MonoBehaviour
             return;
         }
         // place wizard
-        GameObject wizardToBuild = wizardMngr.GetTurrentToBuild();
-        wizard = (GameObject)Instantiate(wizardToBuild, transform.position + positionOffset, transform.rotation);
+        wizardMngr.placeWizardOn(this);
     }
 
 

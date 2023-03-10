@@ -8036,6 +8036,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781379950fa162642a23897cd65d89a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wizard1_Data:
+    prefab: {fileID: 1953271650171834, guid: dbf7a0c9d76b77a40af3104feac0641d, type: 3}
+    cost: 15
+  wizard2_Data:
+    prefab: {fileID: 1248815240492774, guid: ccd8c3b89aa02e943a08ab9238a8a70c, type: 3}
+    cost: 25
 --- !u!4 &952180514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2964444673049628889, guid: f0d8bf8c2349c5449a7b28e6648a152f, type: 3}
@@ -9029,7 +9035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667341804439436153, guid: f5dc0e85978f5194483553e92ca3437f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseWizard2
+      value: selectWizard2
       objectReference: {fileID: 0}
     - target: {fileID: 7667341804439436153, guid: f5dc0e85978f5194483553e92ca3437f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -9469,6 +9475,7 @@ GameObject:
   - component: {fileID: 1154066286}
   - component: {fileID: 1154066288}
   - component: {fileID: 1154066289}
+  - component: {fileID: 1154066290}
   m_Layer: 0
   m_Name: scriptManager
   m_TagString: Untagged
@@ -9535,6 +9542,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wizard1: {fileID: 1953271650171834, guid: dbf7a0c9d76b77a40af3104feac0641d, type: 3}
   wizard2: {fileID: 1248815240492774, guid: ccd8c3b89aa02e943a08ab9238a8a70c, type: 3}
+--- !u!114 &1154066290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154066285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5dedf168548074dacfbd2a3cf1ce54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingMoney: 20
 --- !u!1 &1198451289
 GameObject:
   m_ObjectHideFlags: 0
@@ -16626,7 +16646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667341804439436153, guid: f5dc0e85978f5194483553e92ca3437f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseWizard1
+      value: selectWizard1
       objectReference: {fileID: 0}
     - target: {fileID: 7667341804439436153, guid: f5dc0e85978f5194483553e92ca3437f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

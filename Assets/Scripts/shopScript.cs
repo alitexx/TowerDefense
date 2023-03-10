@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class shopScript : MonoBehaviour
 {
+    public wizardShopData wizard1_Data;
+    public wizardShopData wizard2_Data;
+
     wizardManager wizardMngr;
 
     private void Start()
     {
         wizardMngr = wizardManager.instance;
     }
-    public void PurchaseWizard1()
+    public void selectWizard1()
     {
-        wizardMngr.SetWizardToSpawn(wizardMngr.wizard1);
+        wizardMngr.selectWizardToSpawn(wizard1_Data);
     }
 
-    public void PurchaseWizard2()
+    public void selectWizard2()
     {
-        wizardMngr.SetWizardToSpawn(wizardMngr.wizard2);
+        wizardMngr.selectWizardToSpawn(wizard2_Data);
     }
 }
