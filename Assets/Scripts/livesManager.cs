@@ -5,7 +5,9 @@ using UnityEngine;
 public class livesManager : MonoBehaviour
 {
 
-    private bool gameEnded = false;
+    public static bool gameEnded = false;
+
+    public GameObject gameoverUI;
     private void Update()
     {
         if (gameEnded)
@@ -20,6 +22,6 @@ public class livesManager : MonoBehaviour
     private void endGame()
     {
         gameEnded = true;
-        Debug.Log("END GAME");
+        gameoverUI.SetActive(true);
     }
 }
