@@ -10,6 +10,7 @@ public class wizardManager : MonoBehaviour
     public GameObject wizard2;
     private wizardShopData wizardToBuild;
     public bool CanBuild { get { return wizardToBuild != null; } }
+    public bool hasMoney { get { return gameStats.coins >= wizardToBuild.cost; } }
     private void Awake()
     {
         instance = this;

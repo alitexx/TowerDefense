@@ -31,7 +31,14 @@ public class tiles : MonoBehaviour
         {
             return;
         }
-        rend.material.color = hoverColor;
+        if (wizardMngr.hasMoney)
+        {
+            rend.material.color = hoverColor;
+        } else
+        {
+            rend.material.color = Color.red;
+        }
+        
     }
 
     private void OnMouseDown()
