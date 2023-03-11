@@ -1090,7 +1090,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbaea810d12e9a4bbd548c09d5599d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
+  health: 3
+  moneyGainedOnDeath: 10
 --- !u!1 &153408
 GameObject:
   m_ObjectHideFlags: 0

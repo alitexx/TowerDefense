@@ -7,6 +7,8 @@ public class fireball : MonoBehaviour
     private Transform target;
     private float speed = 70f;
 
+    public int attackPower = 1;
+
     public void Seek(Transform _target)
     {
         target = _target;
@@ -34,6 +36,11 @@ public class fireball : MonoBehaviour
 
     void HitTarget()
     {
+        enemyController enemy = target.GetComponent<enemyController>();
+        if (enemy != null)
+        {
+            enemy.takeDamage(attackPower);
+        }
         Destroy(gameObject);
         return;
     }

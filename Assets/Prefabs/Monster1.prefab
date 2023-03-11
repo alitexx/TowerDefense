@@ -683,6 +683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  health: 2
+  moneyGainedOnDeath: 5
 --- !u!1 &165938
 GameObject:
   m_ObjectHideFlags: 0

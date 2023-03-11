@@ -6,6 +6,9 @@ public class enemyController : MonoBehaviour
 {
     public float speed = 10f;
 
+    public int health = 3;
+    public int moneyGainedOnDeath = 5;
+
     private Transform target;
     private int wavepointIndex = 0;
 
@@ -28,11 +31,22 @@ public class enemyController : MonoBehaviour
     {
         if (wavepointIndex >= waypoints.points.Length - 1)
         {
+            gameStats.Lives--;
             Destroy(gameObject);
             return;
         }
 
         wavepointIndex++;
         target = waypoints.points[wavepointIndex];
+    }
+
+    public void takeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            gameStats.coins += moneyGainedOnDeath;
+            Destroy(gameObject);
+        }
     }
 }

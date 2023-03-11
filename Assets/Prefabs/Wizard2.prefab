@@ -729,7 +729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 10
   enemyTag: Enemy
-  fireRate: 1
+  fireRate: 2
   fireballPrefab: {fileID: 9040074222606210349, guid: 3689cdd6b1f85a54bbbed7a4e6f0c95e, type: 3}
   firePoint: {fileID: 7910838032252881219}
 --- !u!1 &1251583507443948
