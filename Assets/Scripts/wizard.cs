@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class wizard : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class wizard : MonoBehaviour
     public float range = 10f;
     private float turnSpeed = 8f;
     private Animator wizardAnimator;
+    public float wizHealth = 20f;
+    public float startHealth = 20f;
+    public Transform bodyToRotate;
+    public Image healthBar;
 
     public string enemyTag = "Enemy";
 
@@ -62,10 +67,10 @@ public class wizard : MonoBehaviour
             return;
         }
 
-        Vector3 dir = target.position - transform.position;
+        Vector3 dir = target.position - bodyToRotate.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        Vector3 rotation = Quaternion.Lerp(bodyToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        bodyToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
         if (fireCountdown <= 0f)
         {
@@ -77,6 +82,19 @@ public class wizard : MonoBehaviour
 
         fireCountdown -= Time.deltaTime;
     }
+
+    public void wizardTakeDamage(int damage)
+    {
+        wizHealth -= damage;
+        healthBar.fillAmount = wizHealth / startHealth;
+
+        if (wizHealth <= 0)
+        {
+            // fire event to destroy wizard
+            Destroy(gameObject);
+        }
+    }
+
 
     private void Shoot()
     {

@@ -11,6 +11,6 @@ public class gameOver : MonoBehaviour
     }
     public void Menu()
     {
-        Debug.Log("Go to menu");
+        SceneManager.LoadScene("Title");
     }
 }

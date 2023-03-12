@@ -1095,6 +1095,8 @@ MonoBehaviour:
   health: 3
   startHealth: 3
   moneyGainedOnDeath: 10
+  damageDealt: 2
+  fireRate: 1
   healthBar: {fileID: 920958842637645872}
 --- !u!1 &153408
 GameObject:
