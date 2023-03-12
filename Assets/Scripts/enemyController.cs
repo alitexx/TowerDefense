@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class enemyController : MonoBehaviour
 {
     public float speed = 10f;
 
     public int health = 3;
+    public int startHealth = 3;
     public int moneyGainedOnDeath = 5;
 
     private Transform target;
     private int wavepointIndex = 0;
+
+    public Image healthBar;
+
 
     private void Start()
     {
@@ -43,6 +48,8 @@ public class enemyController : MonoBehaviour
     public void takeDamage(int damage)
     {
         health -= damage;
+        healthBar.fillAmount = health / startHealth;
+
         if (health <= 0)
         {
             gameStats.coins += moneyGainedOnDeath;
