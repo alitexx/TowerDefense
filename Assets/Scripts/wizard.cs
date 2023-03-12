@@ -7,6 +7,7 @@ public class wizard : MonoBehaviour
     private Transform target;
     public float range = 10f;
     private float turnSpeed = 8f;
+    private Animator wizardAnimator;
 
     public string enemyTag = "Enemy";
 
@@ -25,6 +26,7 @@ public class wizard : MonoBehaviour
 
     private void Start()
     {
+        wizardAnimator = GetComponent<Animator>();
         InvokeRepeating("updateTarget", 0f, 0.5f);
     }
 
@@ -67,8 +69,10 @@ public class wizard : MonoBehaviour
 
         if (fireCountdown <= 0f)
         {
+            wizardAnimator.SetTrigger("attacking");
             Shoot();
             fireCountdown = 1f / fireRate;
+            wizardAnimator.ResetTrigger("attacking");
         }
 
         fireCountdown -= Time.deltaTime;
