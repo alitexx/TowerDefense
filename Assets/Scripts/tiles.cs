@@ -41,6 +41,11 @@ public class tiles : MonoBehaviour
         
     }
 
+    public void SellWizard()
+    {
+        Destroy(wizard);
+    }
+
     private void OnMouseDown()
     {
         if (!wizardMngr.CanBuild)

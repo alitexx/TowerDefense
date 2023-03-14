@@ -727,8 +727,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 10
-  wizHealth: 15
-  startHealth: 15
+  wizHealth: 20
+  startHealth: 20
   bodyToRotate: {fileID: 955068345573951602}
   healthBar: {fileID: 8616629997781959897}
   enemyTag: Enemy
