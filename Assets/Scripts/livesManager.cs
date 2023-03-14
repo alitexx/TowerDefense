@@ -6,11 +6,12 @@ public class livesManager : MonoBehaviour
 {
 
     public static bool gameEnded = false;
+    public GameObject winScreen;
 
     public GameObject gameoverUI;
     private void Update()
     {
-        if (gameEnded)
+        if (gameEnded || winScreen.activeSelf)
         {
             return;
         }
